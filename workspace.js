@@ -64,7 +64,7 @@ cpdefine("inline:com-zipwhip-workspace-beerbot", ["chilipeppr_ready"], function(
          * and inits them.
          */
         init: function() {
-
+ 
             // we load the TinyG workspace and then we modify it afterwards
             this.loadTinyGWorkspace(function() {
                 $('#com-chilipeppr-ws-gcode-hdr .workspace-title').text("Beer Bot Workspace");
