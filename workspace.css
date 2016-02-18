@@ -1,7 +1,10 @@
 .workspace-img {
-    border:1px solid gray;
+    border:1px solid #ccc;
     width:100%;
     margin-bottom:10px;
+    border-radius:4px;
+    background-color:white;
+    padding:4px 16px;
 }
 
 #com-chilipeppr-ws-gcode-hdr .btn {
