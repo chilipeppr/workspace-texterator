@@ -1,5 +1,5 @@
 /* global cpdefine chilipeppr cprequire */
-cprequire_test(["inline:com-zipwhip-workspace-beerbot"], function(ws) {
+cprequire_test(["inline:com-zipwhip-workspace-texterator"], function(ws) {
 
     console.log("initting workspace");
 
@@ -28,20 +28,20 @@ cprequire_test(["inline:com-zipwhip-workspace-beerbot"], function(ws) {
     ws.init();
 
     // Do some niceties for testing like margins on widget and title for browser
-    $('title').html("Beer Bot Workspace");
+    $('title').html("Texterator Workspace");
     $('body').css('padding', '10px');
 
 } /*end_test*/ );
 
 // This is the main definition of your widget. Give it a unique name.
-cpdefine("inline:com-zipwhip-workspace-beerbot", ["chilipeppr_ready"], function() {
+cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], function() {
     return {
         /**
          * The ID of the widget. You must define this and make it unique.
          */
-        id: "com-zipwhip-workspace-beerbot", // Make the id the same as the cpdefine id
-        name: "Workspace / Beer Bot", // The descriptive name of your widget.
-        desc: `This workspace is for the Zipwhip Beer Bot. Multiple TinyG control boards are connected in parallel to control different parts of the Beer Bot including a beer dispenser, red solo cup laser etching, a cup dispenser, and a rotational stage. `,
+        id: "com-zipwhip-workspace-texterator", // Make the id the same as the cpdefine id
+        name: "Workspace / Texterator", // The descriptive name of your widget.
+        desc: `This workspace is for the Zipwhip Texterator. Multiple TinyG control boards are connected in parallel to control different parts of the Texterator including a beer dispenser, red solo cup laser etching, a cup dispenser, and a rotational stage. `,
         url: "(auto fill by runme.js)", // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
         fiddleurl: "(auto fill by runme.js)", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
         githuburl: "(auto fill by runme.js)", // The backing github repo
@@ -67,26 +67,27 @@ cpdefine("inline:com-zipwhip-workspace-beerbot", ["chilipeppr_ready"], function(
  
             // we load the TinyG workspace and then we modify it afterwards
             this.loadTinyGWorkspace(function() {
-                $('#com-chilipeppr-ws-gcode-hdr .workspace-title').text("Beer Bot Workspace");
-                
+                $('#com-chilipeppr-ws-gcode-hdr .workspace-title').text("Texterator Workspace");
+                $('#com-chilipeppr-ws-gcode-hdr .workspace-title').html('<img class="workspace-img" src="https://github.com/chilipeppr/workspace-texterator/raw/master/logo.png">');
+
                 // load zipwhip recieve text widget
                 $('#com-chilipeppr-ws-menu .zipwhip-recvtext-button').trigger("click");
                 
-                // Inject the Beer Bot widget
-                $('<div class="zhigh" id="com-chilipeppr-ws-beerbot"></div>').insertAfter('#com-chilipeppr-ws-zipwhip-recvtext');
+                // Inject the Texterator widget
+                $('<div class="zhigh" id="com-chilipeppr-ws-texterator"></div>').insertAfter('#com-chilipeppr-ws-zipwhip-recvtext');
                 
                 chilipeppr.load(
-                  "#com-chilipeppr-ws-beerbot",
-                  "http://raw.githubusercontent.com/chilipeppr/widget-beerbot/master/auto-generated-widget.html",
+                  "#com-chilipeppr-ws-texterator",
+                  "http://raw.githubusercontent.com/chilipeppr/widget-texterator/master/auto-generated-widget.html",
                   function() {
-                    // Callback after widget loaded into #myDivComZipwhipWidgetBeerbot
+                    // Callback after widget loaded into #myDivComZipwhipWidgettexterator
                     // Now use require.js to get reference to instantiated widget
                     cprequire(
-                      ["inline:com-zipwhip-widget-beerbot"], // the id you gave your widget
-                      function(myObjComZipwhipWidgetBeerbot) {
+                      ["inline:com-zipwhip-widget-texterator"], // the id you gave your widget
+                      function(myObjComZipwhipWidgettexterator) {
                         // Callback that is passed reference to the newly loaded widget
-                        console.log("Widget / Beer Bot just got loaded.", myObjComZipwhipWidgetBeerbot);
-                        myObjComZipwhipWidgetBeerbot.init();
+                        console.log("Widget / Texterator just got loaded.", myObjComZipwhipWidgettexterator);
+                        myObjComZipwhipWidgettexterator.init();
                       }
                     );
                   }

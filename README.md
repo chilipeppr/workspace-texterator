@@ -1,9 +1,9 @@
-# com-zipwhip-workspace-beerbot
-This workspace is for the Zipwhip Beer Bot. Multiple TinyG control boards are connected in parallel to control different parts of the Beer Bot including a beer dispenser, red solo cup laser etching, a cup dispenser, and a rotational stage. 
+# com-zipwhip-workspace-texterator
+This workspace is for the Zipwhip Texterator. Multiple TinyG control boards are connected in parallel to control different parts of the Texterator including a beer dispenser, red solo cup laser etching, a cup dispenser, and a rotational stage. 
 
 
 
-## ChiliPeppr Workspace / Beer Bot
+## ChiliPeppr Workspace / Texterator
 
 All ChiliPeppr workspaces/widgets/elements are defined using cpdefine() which is a method
 that mimics require.js. Each defined object must have a unique ID so it does
@@ -11,13 +11,13 @@ not conflict with other ChiliPeppr objects.
 
 | Item                  | Value           |
 | -------------         | ------------- | 
-| ID                    | com-zipwhip-workspace-beerbot |
-| Name                  | Workspace / Beer Bot |
-| Description           | This workspace is for the Zipwhip Beer Bot. Multiple TinyG control boards are connected in parallel to control different parts of the Beer Bot including a beer dispenser, red solo cup laser etching, a cup dispenser, and a rotational stage.  |
-| chilipeppr.load() URL | http://raw.githubusercontent.com/chilipeppr/workspace-beerbot/master/auto-generated-workspace.html |
-| Edit URL              | http://ide.c9.io/chilipeppr/workspace-beerbot |
-| Github URL            | http://github.com/chilipeppr/workspace-beerbot |
-| Test URL              | https://preview.c9users.io/chilipeppr/workspace-beerbot/workspace.html |
+| ID                    | com-zipwhip-workspace-texterator |
+| Name                  | Workspace / Texterator |
+| Description           | This workspace is for the Zipwhip Texterator. Multiple TinyG control boards are connected in parallel to control different parts of the Texterator including a beer dispenser, red solo cup laser etching, a cup dispenser, and a rotational stage.  |
+| chilipeppr.load() URL | http://raw.githubusercontent.com/chilipeppr/workspace-texterator/master/auto-generated-workspace.html |
+| Edit URL              | http://ide.c9.io/chilipeppr/workspace-texterator |
+| Github URL            | http://github.com/chilipeppr/workspace-texterator |
+| Test URL              | https://preview.c9users.io/chilipeppr/workspace-texterator/workspace.html |
 
 ## Example Code for chilipeppr.load() Statement
 
@@ -34,16 +34,16 @@ back the instance of it to init() it.
 // this workspace should be loaded into.
 chilipeppr.load(
   "#pnlWorkspace",
-  "http://raw.githubusercontent.com/chilipeppr/workspace-beerbot/master/auto-generated-workspace.html",
+  "http://raw.githubusercontent.com/chilipeppr/workspace-texterator/master/auto-generated-workspace.html",
   function() {
     // Callback after workspace loaded into #pnlWorkspace
     // Now use require.js to get reference to instantiated workspace
     cprequire(
-      ["inline:com-zipwhip-workspace-beerbot"], // the id you gave your workspace
-      function(myComZipwhipWorkspaceBeerbot) {
+      ["inline:com-zipwhip-workspace-texterator"], // the id you gave your workspace
+      function(myComZipwhipWorkspaceTexterator) {
         // Callback that is passed reference to the newly loaded workspace
-        console.log("Workspace / Beer Bot just got loaded.", myComZipwhipWorkspaceBeerbot);
-        myComZipwhipWorkspaceBeerbot.init();
+        console.log("Workspace / Texterator just got loaded.", myComZipwhipWorkspaceTexterator);
+        myComZipwhipWorkspaceTexterator.init();
       }
     );
   }
@@ -118,7 +118,7 @@ To better understand how ChiliPeppr's publish() method works see amplify.js's do
           </tr>
       </thead>
       <tbody>
-      <tr valign="top"><td>/com-zipwhip-workspace-beerbot/com-chilipeppr-elem-dragdrop/ondragover</td><td>The Chilipeppr drag drop element will publish on channel /com-chilipeppr-elem-dragdrop/ondropped when a file is dropped so we subscribe to it so we can load a Gcode file when the user drags it onto the browser. It also adds a hover class to the bound DOM elem so we can add a CSS to hilite on hover</td></tr><tr valign="top"><td>/com-zipwhip-workspace-beerbot/com-chilipeppr-elem-dragdrop/ondragleave</td><td>We need to know when the drag is over to remove the CSS hilites.</td></tr><tr valign="top"><td>/com-zipwhip-workspace-beerbot/com-chilipeppr-widget-gcode/resize</td><td>We watch if the Gcode viewer resizes so that we can reposition or resize other elements in the workspace. Specifically we ask the Serial Port Console to resize. We also redraw the 3D Viewer so it fills the whole screen.</td></tr>    
+      <tr valign="top"><td>/com-zipwhip-workspace-texterator/com-chilipeppr-elem-dragdrop/ondragover</td><td>The Chilipeppr drag drop element will publish on channel /com-chilipeppr-elem-dragdrop/ondropped when a file is dropped so we subscribe to it so we can load a Gcode file when the user drags it onto the browser. It also adds a hover class to the bound DOM elem so we can add a CSS to hilite on hover</td></tr><tr valign="top"><td>/com-zipwhip-workspace-texterator/com-chilipeppr-elem-dragdrop/ondragleave</td><td>We need to know when the drag is over to remove the CSS hilites.</td></tr><tr valign="top"><td>/com-zipwhip-workspace-texterator/com-chilipeppr-widget-gcode/resize</td><td>We watch if the Gcode viewer resizes so that we can reposition or resize other elements in the workspace. Specifically we ask the Serial Port Console to resize. We also redraw the 3D Viewer so it fills the whole screen.</td></tr>    
       </tbody>
   </table>
 
@@ -135,7 +135,7 @@ The table below shows, in order, the methods and properties inside the workspace
           </tr>
       </thead>
       <tbody>
-      <tr valign="top"><td>id</td><td>string</td><td>"com-zipwhip-workspace-beerbot"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Workspace / Beer Bot"</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"This workspace is for the Zipwhip Beer Bot. Multiple TinyG control boards are connected in parallel to control different parts of the Beer Bot including a beer dispenser, red solo cup laser etching, a cup dispenser, and a rotational stage. "</td></tr><tr valign="top"><td>url</td><td>string</td><td>"http://raw.githubusercontent.com/chilipeppr/workspace-beerbot/master/auto-generated-workspace.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"http://ide.c9.io/chilipeppr/workspace-beerbot"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"http://github.com/chilipeppr/workspace-beerbot"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"http://workspace-beerbot-chilipeppr.c9users.io/workspace.html"</td></tr><tr valign="top"><td>foreignSubscribe</td><td>object</td><td>Please see docs above.</td></tr><tr valign="top"><td>foreignPublish</td><td>object</td><td>Please see docs above.</td></tr><tr valign="top"><td>tinygws</td><td>object</td><td>Keep reference to TinyG workspace</td></tr><tr valign="top"><td>init</td><td>function</td><td>function () <br><br>The workspace's init method. It loads the all the widgets contained in the workspace
+      <tr valign="top"><td>id</td><td>string</td><td>"com-zipwhip-workspace-texterator"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Workspace / Texterator"</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"This workspace is for the Zipwhip Texterator. Multiple TinyG control boards are connected in parallel to control different parts of the Texterator including a beer dispenser, red solo cup laser etching, a cup dispenser, and a rotational stage. "</td></tr><tr valign="top"><td>url</td><td>string</td><td>"http://raw.githubusercontent.com/chilipeppr/workspace-texterator/master/auto-generated-workspace.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"http://ide.c9.io/chilipeppr/workspace-texterator"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"http://github.com/chilipeppr/workspace-texterator"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"http://workspace-texterator-chilipeppr.c9users.io/workspace.html"</td></tr><tr valign="top"><td>foreignSubscribe</td><td>object</td><td>Please see docs above.</td></tr><tr valign="top"><td>foreignPublish</td><td>object</td><td>Please see docs above.</td></tr><tr valign="top"><td>tinygws</td><td>object</td><td>Keep reference to TinyG workspace</td></tr><tr valign="top"><td>init</td><td>function</td><td>function () <br><br>The workspace's init method. It loads the all the widgets contained in the workspace
 and inits them.</td></tr><tr valign="top"><td>getBillboard</td><td>function</td><td>function () <br><br>Returns the billboard HTML, CSS, and Javascript for this Workspace. The billboard
 is used by the home page, the workspace picker, and the fork pulldown to show a
 consistent name/image/description tag for the workspace throughout the ChiliPeppr ecosystem.</td></tr><tr valign="top"><td>addBillboardToWorkspaceMenu</td><td>function</td><td>function () <br><br>Inject the billboard into the Workspace upper right corner pulldown which

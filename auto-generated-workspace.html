@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-    <title>Workspace / Beer Bot</title>
+    <title>Workspace / Texterator</title>
 
     <!-- ChiliPeppr is based on bootstrap CSS. -->
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -14,13 +14,15 @@
     <script type='text/javascript' src="//i2dcui.appspot.com/js/require.js"></script>
 
     <style type='text/css'>
-
+.workspace-img {
+    border:1px solid gray;
+}
     </style>
 
     <script type='text/javascript'>
     //<![CDATA[
 /* global cpdefine chilipeppr cprequire */
-cprequire_test(["inline:com-zipwhip-workspace-beerbot"], function(ws) {
+cprequire_test(["inline:com-zipwhip-workspace-texterator"], function(ws) {
 
     console.log("initting workspace");
 
@@ -49,24 +51,24 @@ cprequire_test(["inline:com-zipwhip-workspace-beerbot"], function(ws) {
     ws.init();
 
     // Do some niceties for testing like margins on widget and title for browser
-    $('title').html("Beer Bot Workspace");
+    $('title').html("Texterator Workspace");
     $('body').css('padding', '10px');
 
 } /*end_test*/ );
 
 // This is the main definition of your widget. Give it a unique name.
-cpdefine("inline:com-zipwhip-workspace-beerbot", ["chilipeppr_ready"], function() {
+cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], function() {
     return {
         /**
          * The ID of the widget. You must define this and make it unique.
          */
-        id: "com-zipwhip-workspace-beerbot", // Make the id the same as the cpdefine id
-        name: "Workspace / Beer Bot", // The descriptive name of your widget.
-        desc: `This workspace is for the Zipwhip Beer Bot. Multiple TinyG control boards are connected in parallel to control different parts of the Beer Bot including a beer dispenser, red solo cup laser etching, a cup dispenser, and a rotational stage. `,
-        url: "http://raw.githubusercontent.com/chilipeppr/workspace-beerbot/master/auto-generated-workspace.html", // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
-        fiddleurl: "http://ide.c9.io/chilipeppr/workspace-beerbot", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
-        githuburl: "http://github.com/chilipeppr/workspace-beerbot", // The backing github repo
-        testurl: "http://workspace-beerbot-chilipeppr.c9users.io/workspace.html", // The standalone working widget so can view it working by itself
+        id: "com-zipwhip-workspace-texterator", // Make the id the same as the cpdefine id
+        name: "Workspace / Texterator", // The descriptive name of your widget.
+        desc: `This workspace is for the Zipwhip Texterator. Multiple TinyG control boards are connected in parallel to control different parts of the Texterator including a beer dispenser, red solo cup laser etching, a cup dispenser, and a rotational stage. `,
+        url: "http://raw.githubusercontent.com/chilipeppr/workspace-texterator/master/auto-generated-workspace.html", // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
+        fiddleurl: "http://ide.c9.io/chilipeppr/workspace-texterator", // The edit URL. This can be auto-filled by runme.js in Cloud9 if you'd like, or just define it on your own to help people know where they can edit/fork your widget
+        githuburl: "http://github.com/chilipeppr/workspace-texterator", // The backing github repo
+        testurl: "http://workspace-texterator-chilipeppr.c9users.io/workspace.html", // The standalone working widget so can view it working by itself
 
         foreignSubscribe: {
             "/com-chilipeppr-elem-dragdrop/ondragover": "The Chilipeppr drag drop element will publish on channel /com-chilipeppr-elem-dragdrop/ondropped when a file is dropped so we subscribe to it so we can load a Gcode file when the user drags it onto the browser. It also adds a hover class to the bound DOM elem so we can add a CSS to hilite on hover",
@@ -88,26 +90,27 @@ cpdefine("inline:com-zipwhip-workspace-beerbot", ["chilipeppr_ready"], function(
  
             // we load the TinyG workspace and then we modify it afterwards
             this.loadTinyGWorkspace(function() {
-                $('#com-chilipeppr-ws-gcode-hdr .workspace-title').text("Beer Bot Workspace");
-                
+                $('#com-chilipeppr-ws-gcode-hdr .workspace-title').text("Texterator Workspace");
+                $('#com-chilipeppr-ws-gcode-hdr .workspace-title').html('<img class="workspace-img" src="https://github.com/chilipeppr/workspace-texterator/raw/master/logo.png">');
+
                 // load zipwhip recieve text widget
                 $('#com-chilipeppr-ws-menu .zipwhip-recvtext-button').trigger("click");
                 
-                // Inject the Beer Bot widget
-                $('<div class="zhigh" id="com-chilipeppr-ws-beerbot"></div>').insertAfter('#com-chilipeppr-ws-zipwhip-recvtext');
+                // Inject the Texterator widget
+                $('<div class="zhigh" id="com-chilipeppr-ws-texterator"></div>').insertAfter('#com-chilipeppr-ws-zipwhip-recvtext');
                 
                 chilipeppr.load(
-                  "#com-chilipeppr-ws-beerbot",
-                  "http://raw.githubusercontent.com/chilipeppr/widget-beerbot/master/auto-generated-widget.html",
+                  "#com-chilipeppr-ws-texterator",
+                  "http://raw.githubusercontent.com/chilipeppr/widget-texterator/master/auto-generated-widget.html",
                   function() {
-                    // Callback after widget loaded into #myDivComZipwhipWidgetBeerbot
+                    // Callback after widget loaded into #myDivComZipwhipWidgettexterator
                     // Now use require.js to get reference to instantiated widget
                     cprequire(
-                      ["inline:com-zipwhip-widget-beerbot"], // the id you gave your widget
-                      function(myObjComZipwhipWidgetBeerbot) {
+                      ["inline:com-zipwhip-widget-texterator"], // the id you gave your widget
+                      function(myObjComZipwhipWidgettexterator) {
                         // Callback that is passed reference to the newly loaded widget
-                        console.log("Widget / Beer Bot just got loaded.", myObjComZipwhipWidgetBeerbot);
-                        myObjComZipwhipWidgetBeerbot.init();
+                        console.log("Widget / Texterator just got loaded.", myObjComZipwhipWidgettexterator);
+                        myObjComZipwhipWidgettexterator.init();
                       }
                     );
                   }
@@ -210,21 +213,21 @@ cpdefine("inline:com-zipwhip-workspace-beerbot", ["chilipeppr_ready"], function(
 
 <body>
 
-    <div id="com-zipwhip-workspace-beerbot" class="xhidden">
+    <div id="com-zipwhip-workspace-texterator" class="xhidden">
         <div id="com-chilipeppr-workspace-tinyg-instance"></div>
     </div>
 
     <!-- Keep this div hidden so it can be cloned and used by the Javascript -->
-    <div id="com-zipwhip-workspace-beerbot-billboard" class="hidden">
+    <div id="com-zipwhip-workspace-texterator-billboard" class="hidden">
         <div class="billboard-content">
-            <h4 class="billboard-title" style="">TinyG Workspace</h4>
+            <h4 class="billboard-title" style="">Texterator Workspace</h4>
 
-            <p class="billboard-url" style=""><a href="http://chilipeppr.com/beerbot">chilipeppr.com/beerbot</a>
+            <p class="billboard-url" style=""><a href="http://chilipeppr.com/texterator">chilipeppr.com/texterator</a>
 
             </p>
             <div class="billboard-imgcontain" style="">
-                <a href="http://chilipeppr.com/beerbot">
-                    <div class="billboard-img" style="background-image: url('https://github.com/chilipeppr/workspace-beerbot/raw/master/billboard.jpg')" />
+                <a href="http://chilipeppr.com/texterator">
+                    <div class="billboard-img" style="background-image: url('https://github.com/chilipeppr/workspace-texterator/raw/master/billboard.png')" />
                 </a>
                 <div class="billboard-stats2">
                 </div>
