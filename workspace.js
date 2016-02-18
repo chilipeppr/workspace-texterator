@@ -96,6 +96,9 @@ cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], functi
                 // Hide some stuff
                 $('.autolevel-button').hide();
                 $('.jscut-button').hide();
+                $('.eagle-button').hide();
+                $('.shuttlexpress-button').hide();
+                $('.lasersolder-button').hide();
                 
             });
             

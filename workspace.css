@@ -1,3 +1,9 @@
 .workspace-img {
     border:1px solid gray;
+    width:100%;
+    margin-bottom:10px;
+}
+
+#com-chilipeppr-ws-gcode-hdr .btn {
+    margin-bottom:5px;
 }
