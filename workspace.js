@@ -65,17 +65,20 @@ cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], functi
          */
         init: function() {
  
+            var that = this;
+            
             // we load the TinyG workspace and then we modify it afterwards
             this.loadTinyGWorkspace(function() {
-                $('#com-chilipeppr-ws-gcode-hdr .workspace-title').text("Texterator Workspace");
+                // $('#com-chilipeppr-ws-gcode-hdr .workspace-title').text("Texterator Workspace");
                 $('#com-chilipeppr-ws-gcode-hdr .workspace-title').html('<img class="workspace-img" src="https://github.com/chilipeppr/workspace-texterator/raw/master/logo.png">');
 
                 // load zipwhip recieve text widget
                 $('#com-chilipeppr-ws-menu .zipwhip-recvtext-button').trigger("click");
                 
                 // Inject the Texterator widget
-                $('<div class="zhigh" id="com-chilipeppr-ws-texterator"></div>').insertAfter('#com-chilipeppr-ws-zipwhip-recvtext');
-                
+                $('<div class="zhigh" id="com-chilipeppr-ws-texterator"></div>')
+                    .insertAfter('#com-chilipeppr-ws-zipwhip-recvtext');
+
                 chilipeppr.load(
                   "#com-chilipeppr-ws-texterator",
                   "http://raw.githubusercontent.com/chilipeppr/widget-texterator/master/auto-generated-widget.html",
@@ -93,6 +96,49 @@ cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], functi
                   }
                 );
                 
+                // Inject the SVG2Gcode widget
+                $('<div class="zhigh" id="com-chilipeppr-ws-svg2gcode"></div>')
+                    .insertAfter('#com-chilipeppr-ws-zipwhip-recvtext');
+
+                chilipeppr.load(
+                  "#com-chilipeppr-ws-svg2gcode",
+                  "http://raw.githubusercontent.com/chilipeppr/widget-svg2gcode/master/auto-generated-widget.html",
+                  function() {
+                    // Callback after widget loaded into #myDivComZipwhipWidgetSvg2gcode
+                    // Now use require.js to get reference to instantiated widget
+                    cprequire(
+                      ["inline:com-zipwhip-widget-svg2gcode"], // the id you gave your widget
+                      function(myObjComZipwhipWidgetSvg2gcode) {
+                        // Callback that is passed reference to the newly loaded widget
+                        console.log("Widget / svg2gcode just got loaded.", myObjComZipwhipWidgetSvg2gcode);
+                        //myObjComZipwhipWidgetSvg2gcode.init();
+                      }
+                    );
+                  }
+                );
+
+                
+                // Inject the Font2Gcode widget
+                $('<div class="zhigh" id="com-chilipeppr-ws-font2gcode"></div>')
+                    .insertAfter('#com-chilipeppr-ws-zipwhip-recvtext');
+
+                chilipeppr.load(
+                  "#com-chilipeppr-ws-font2gcode",
+                  "http://raw.githubusercontent.com/chilipeppr/widget-font2gcode/master/auto-generated-widget.html",
+                  function() {
+                    // Callback after widget loaded into #myDivComZipwhipWidgetFont2gcode
+                    // Now use require.js to get reference to instantiated widget
+                    cprequire(
+                      ["inline:com-zipwhip-widget-font2gcode"], // the id you gave your widget
+                      function(myObjComZipwhipWidgetFont2gcode) {
+                        // Callback that is passed reference to the newly loaded widget
+                        console.log("Widget / Font2Gcode just got loaded.", myObjComZipwhipWidgetFont2gcode);
+                        //myObjComZipwhipWidgetFont2gcode.init();
+                      }
+                    );
+                  }
+                );
+
                 // Hide some stuff
                 $('.autolevel-button').hide();
                 $('.jscut-button').hide();
@@ -100,6 +146,10 @@ cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], functi
                 $('.shuttlexpress-button').hide();
                 $('.lasersolder-button').hide();
                 
+                that.loadWorkspaceMenu();
+                
+                // now resize to make manual sizing widgets look ok
+                $(window).trigger("resize");
             });
             
         },
