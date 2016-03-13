@@ -90,13 +90,14 @@ cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], functi
                       function(myObjComZipwhipWidgettexterator) {
                         // Callback that is passed reference to the newly loaded widget
                         console.log("Widget / Texterator just got loaded.", myObjComZipwhipWidgettexterator);
-                        myObjComZipwhipWidgettexterator.init();
+                        myObjComZipwhipWidgettexterator.init({silent:true});
                       }
                     );
                   }
                 );
                 
                 // Inject the SVG2Gcode widget
+                /*
                 $('<div class="zhigh" id="com-chilipeppr-ws-svg2gcode"></div>')
                     .insertAfter('#com-chilipeppr-ws-zipwhip-recvtext');
 
@@ -116,6 +117,7 @@ cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], functi
                     );
                   }
                 );
+                */
 
                 
                 // Inject the Font2Gcode widget
@@ -133,7 +135,7 @@ cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], functi
                       function(myObjComZipwhipWidgetFont2gcode) {
                         // Callback that is passed reference to the newly loaded widget
                         console.log("Widget / Font2Gcode just got loaded.", myObjComZipwhipWidgetFont2gcode);
-                        myObjComZipwhipWidgetFont2gcode.init();
+                        myObjComZipwhipWidgetFont2gcode.init({silent:true});
                       }
                     );
                   }
