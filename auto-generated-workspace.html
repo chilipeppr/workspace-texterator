@@ -112,12 +112,13 @@ cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], functi
                 }, 2000);
 
                 // Inject the Texterator widget
-                $('<div class="zhigh" id="com-chilipeppr-ws-texterator"></div>')
+                $('<div class="zhigh" id="com-chilipeppr-ws-texterator" data="john"></div>')
                     .insertAfter('#com-chilipeppr-ws-zipwhip-recvtext');
 
                 chilipeppr.load(
                   "#com-chilipeppr-ws-texterator",
-                  "http://raw.githubusercontent.com/chilipeppr/widget-texterator/master/auto-generated-widget.html",
+                  "https://preview.c9users.io/chilipeppr/widget-texterator/auto-generated-widget.html",
+                  //"http://raw.githubusercontent.com/chilipeppr/widget-texterator/master/auto-generated-widget.html",
                   function() {
                     // Callback after widget loaded into #myDivComZipwhipWidgettexterator
                     // Now use require.js to get reference to instantiated widget
