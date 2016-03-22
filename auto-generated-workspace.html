@@ -106,7 +106,11 @@ cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], functi
 
                 // load zipwhip recieve text widget
                 $('#com-chilipeppr-ws-menu .zipwhip-recvtext-button').trigger("click");
-                
+                setTimeout(function() {
+                  // hide the recv widget now
+                  $('#com-chilipeppr-ws-menu .zipwhip-recvtext-button').trigger("click");
+                }, 2000);
+
                 // Inject the Texterator widget
                 $('<div class="zhigh" id="com-chilipeppr-ws-texterator"></div>')
                     .insertAfter('#com-chilipeppr-ws-zipwhip-recvtext');
