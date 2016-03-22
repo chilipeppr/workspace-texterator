@@ -125,6 +125,7 @@ cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], functi
 
                 
                 // Inject the Font2Gcode widget
+                /*
                 $('<div class="zhigh" id="com-chilipeppr-ws-font2gcode"></div>')
                     .insertAfter('#com-chilipeppr-ws-zipwhip-recvtext');
 
@@ -144,6 +145,7 @@ cpdefine("inline:com-zipwhip-workspace-texterator", ["chilipeppr_ready"], functi
                     );
                   }
                 );
+                */
 
                 // Hide some stuff
                 $('.autolevel-button').hide();
