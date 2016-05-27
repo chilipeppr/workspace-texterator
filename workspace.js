@@ -117,8 +117,8 @@ cpdefine("inline:com-zipwhip-workspace-texterator", ['Three', "chilipeppr_ready"
 
                 chilipeppr.load(
                   "#com-chilipeppr-ws-texterator",
-                  "https://preview.c9users.io/chilipeppr/widget-texterator/auto-generated-widget.html",
-                  //"http://raw.githubusercontent.com/chilipeppr/widget-texterator/master/auto-generated-widget.html",
+                  //"https://preview.c9users.io/chilipeppr/widget-texterator/auto-generated-widget.html",
+                  "http://raw.githubusercontent.com/chilipeppr/widget-texterator/master/auto-generated-widget.html",
                   function() {
                     // Callback after widget loaded into #myDivComZipwhipWidgettexterator
                     // Now use require.js to get reference to instantiated widget
